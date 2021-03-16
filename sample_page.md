@@ -194,11 +194,15 @@ class Explore:
 </li>
 
 <li><details><summary>Data transformation methods</summary>    
-    
-<details><summary>Methods related to the bucket dictionary</summary>
+
+<ul>
+
+<li><details><summary>Methods related to the bucket dictionary</summary>
 The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
 
-<details><summary>bucket_key_words method</summary>
+<ul>
+    
+<li><details><summary>bucket_key_words method</summary>
     
 ```python
     def bucket_key_words(self):
@@ -265,10 +269,11 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             # Replace with new bucket
             self.bucket = new_bucket
 ```
+</li>
 
 </details>
 
-<details><summary>quantile_bucketizer method method</summary>
+<li><details><summary>quantile_bucketizer method method</summary>
     
 ```python    
     def quantile_bucketizer(self, numq=4, frmt='.2f'):
@@ -313,10 +318,11 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         print(f'Bucket automatically computed for {numq} quantiles:\n{bucket}')
         return bucket
 ```    
+</li>
 
 </details>  
 
-<details><summary>bracket_type method</summary>
+<li><details><summary>bracket_type method</summary>
     
 ```python    
     def bracket_type(self, value):
@@ -365,10 +371,11 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             # With everything set up, perform the bucketization
             self.bucketize()
 ```
+</li>
 
 </details>
 
-<details><summary>bucketize method</summary>
+<li><details><summary>bucketize method</summary>
 
 ```python
     def bucketize(self):
@@ -413,16 +420,18 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
                 # Using the indices, replace the data with the bucket key in a new 'bucketized'+self.feat column
                 self.subset.loc[indices, 'bucketized_'+self.feat] = key
 ```
-
-<br></br>
+</li>
 
 </details>  
 
 </details>                
 
+</ul>
+
 <details><summary>Other Transformations method</summary>
 
-<details><summary>log_tansform method</summary>
+<ul>
+<li><details><summary>log_tansform method</summary>
 
 ```python
     def log_transform(self):
@@ -434,10 +443,11 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         else: 
             self.subset['log_'+self.feat] = self.subset[self.feat].apply(lambda x: np.log(x+1))
 ```    
+</li>
 
 </details>
 
-<details><summary>delete_values method</summary>
+<li><details><summary>delete_values method</summary>
 
 ```python
     def delete_values(self, values):
@@ -450,12 +460,13 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             elif isinstance(val, list):
                 self.subset = self.subset[~self.subset[self.feat].between(val[0], val[1], inclusive=True)]
  ```
- 
-<br></br>
+</li>
 
 </details>
  
 </details>
+
+</ul>
 
 </details>
 
@@ -464,7 +475,8 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 <li><details><summary>Main Methods method</summary>
 Main methods for statistics and visualization. 
 
-<details><summary>do_stats method</summary>
+<ul>
+<li><details><summary>do_stats method</summary>
 
 ```python
     def do_stats(self, prefix=''):
@@ -502,10 +514,11 @@ Main methods for statistics and visualization.
 
             print(self.stats)     
 ```   
+</li>
 
 </details>
 
-<details><summary>plot_counts method</summary>
+<li><details><summary>plot_counts method</summary>
 
 ```python
     def plot_counts(self, prefix=''):
@@ -533,10 +546,11 @@ Main methods for statistics and visualization.
         
         plt.tight_layout()
 ```
+</li>
 
 </details>
 
-<details><summary>plot numerical data method</summary>
+<li><details><summary>plot numerical data method</summary>
 
 ```python
     def plot_num(self, prefix=''):
@@ -552,9 +566,11 @@ Main methods for statistics and visualization.
         
         plt.tight_layout()
 ```
+</li>
+
 </details>
 
-<details><summary>plot categorical data method</summary>
+<li><details><summary>plot categorical data method</summary>
 
 ```python
     def plot_cat(self, prefix='', target_value_compared=1):
@@ -589,14 +605,15 @@ Main methods for statistics and visualization.
         
         plt.tight_layout()
 ```        
+</li>
 
 </details>
-
-<details><summary>Other methods</summary>
+ 
+<li><details><summary>Other methods</summary>
 Appendage methods for working with the data or convenience
-<br></br>
 
-<details><summary>add_prefix method</summary>
+<ul>
+<li><details><summary>add_prefix method</summary>
 
 ```python
     def add_prefix(self, prefix):
@@ -619,10 +636,11 @@ Appendage methods for working with the data or convenience
 
         return p + self.feat
 ```
+</li>
 
 </details>
 
-<details><summary>natural_key methods</summary>
+<li><details><summary>natural_key methods</summary>
 
 ```python
     def natural_key(self, string_):
@@ -639,10 +657,11 @@ Appendage methods for working with the data or convenience
         else:
             return [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', string_)]
 ```
+</li>
 
 </details>
 
-<details><summary>auto convenience method</summary>
+<li><details><summary>auto convenience method</summary>
 
 ```python
     def auto(self, log=False, bucket=None):
@@ -679,8 +698,11 @@ Appendage methods for working with the data or convenience
             self.plot_counts(log_px)
             self.plot_cat(bucket_px)
 ```
+</li>
 
 </details>
+
+</li>
 
 </details>
 
