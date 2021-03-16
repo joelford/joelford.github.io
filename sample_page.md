@@ -704,7 +704,32 @@ Appendage methods for working with the data or convenience
 
 ### 3. Support the selection of appropriate statistical tools and techniques
 
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+<details><summary>summar1</summary>
+
+<ul>
+<li><details><summary>summary1.1</summary>
+Text!
+    
+<ul>
+    <li><details><summary>summary1.1.1</summary> 
+    ```python
+        def derp(self):
+            print('derp')
+    ```
+</li>
+</details>
+    
+    <li><details><summary>summary1.1.2</summary>
+        ```python
+            def herp(self):
+                print('herp')
+        ```
+</li>
+</details>
+</ul>
+
+</details>
+</ul>
 
 ### 4. Provide a basis for further data collection through surveys or experiments
 
