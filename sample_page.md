@@ -108,9 +108,7 @@ The class Explore is used to automatically explore the data, do statistics and v
 
 <details><summary>Click to expand the Explore class</summary>
     
-<ul>
-
-<li><details><summary>Class initialization</summary>
+<details><summary>Class initialization</summary>
     
 ```python
 class Explore:    
@@ -191,12 +189,9 @@ class Explore:
 
 </details>
 
-</li>
-
-<li><details><summary>Data transformation methods</summary>    
+<details><summary>Data transformation methods</summary>    
 
 <ul>
-
 <li><details><summary>Methods related to the bucket dictionary</summary>
 The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
 
@@ -319,7 +314,6 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         return bucket
 ```    
 </li>
-
 </details>  
 
 <li><details><summary>bracket_type method</summary>
@@ -340,10 +334,10 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         
         else: return False
 ```
- 
+</li>
 </details>
     
-<details><summary>bucketize_data method</summary>
+<li><details><summary>bucketize_data method</summary>
 
 ```python
     def bucketize_data(self, new=None):
@@ -372,7 +366,6 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             self.bucketize()
 ```
 </li>
-
 </details>
 
 <li><details><summary>bucketize method</summary>
@@ -421,14 +414,14 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
                 self.subset.loc[indices, 'bucketized_'+self.feat] = key
 ```
 </li>
-
 </details>  
 
+</li>
 </details>                
 
 </ul>
 
-<details><summary>Other Transformations method</summary>
+<li><details><summary>Other Transformations method</summary>
 
 <ul>
 <li><details><summary>log_tansform method</summary>
@@ -461,7 +454,6 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
                 self.subset = self.subset[~self.subset[self.feat].between(val[0], val[1], inclusive=True)]
  ```
 </li>
-
 </details>
  
 </details>
