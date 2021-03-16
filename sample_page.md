@@ -592,7 +592,7 @@ addr_state = Explore('addr_state')
 addr_state.auto()
 ```
 
-![asd](images/explor_img/annual_inc.png)
+![asd](./images/explor_img/annual_inc.png)
 
 </details>
 
