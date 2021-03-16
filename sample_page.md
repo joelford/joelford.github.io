@@ -606,6 +606,8 @@ annual_inc.plot_cat('bucket')
 <img src="images/explor_img/annual_inc.png?raw=true"/>
 ```
 
+![annual_inc](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/annual_inc.PNG)
+
 </details>
 
 <details><summary>Average Current Balance</summary>
@@ -618,6 +620,9 @@ avg_cur_bal.auto(log=True)
 <img src="images/explor_img/avg_cur_bal2.png?raw=true"/>
 ```
 
+![avg_cur_bal1](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/avg_cur_bal1.PNG)
+![avg_cur_bal2](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/avg_cur_bal2.PNG)
+
 </details>
 
 <details><summary>Bankcards open to buy</summary>
@@ -628,6 +633,8 @@ bc_open_to_buy.bucketize_data({'0':0, '(0,5000)':[0.001, 5000], '5000=+':'5000=+
 bc_open_to_buy.auto(bucket = 'only buckets')
 <img src="images/explor_img/bc_open_to_buy.png?raw=true"/>
 ```
+
+![bc_open_to_buy](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/bc_open_to_buy.PNG)
 
 </details>
 
@@ -642,6 +649,8 @@ dti.do_stats()
 dti.plot_cat('bucket')
 ```
 
+![dti](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/dti.PNG)
+
 </details>
 
 <details><summary>FICO range high (credit score)</summary>
@@ -653,6 +662,8 @@ b = fico_range_high.quantile_bucketizer(4)
 fico_range_high.bucketize_data(new=b)
 fico_range_high.plot_cat(prefix='bucket')
 ```
+
+![fico_range_high](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/fico_high.PNG)
 
 </details>
 
@@ -668,6 +679,8 @@ home_ownership.plot_counts()
 home_ownership.plot_cat()
 ```
 
+![home_ownership](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/home.PNG)
+
 </details>
 
 <details><summary>Number of Mortgage Accounts</summary>
@@ -680,6 +693,8 @@ mort_acc = Explore('mort_acc', bucket=b)
 mort_acc.auto(bucket='only buckets')
 ```
 
+![mort_acc](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/mortgage.PNG)
+
 </details>
 
 <details><summary>Percentage of all bankcard accounts > 75% of limit</summary>
@@ -688,6 +703,9 @@ mort_acc.auto(bucket='only buckets')
 percent_bc_gt_75 = Explore('percent_bc_gt_75')
 percent_bc_gt_75.auto()
 ```
+
+![percent_bc_gt_75(1)](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/percent_bc_gt_75(1).PNG)
+![percent_bc_gt_75(2)](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/percent_bc_gt_75(2).PNG)
 
 </details>
 
@@ -700,6 +718,8 @@ pub_rec_bankruptcies = Explore('pub_rec_bankruptcies', bucket=b)
 pub_rec_bankruptcies.auto(bucket='only buckets')
 ```
 
+![pub_rec_bankruptcies](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/pub_rec_bank_rupt.PNG)
+
 </details>
 
 <details><summary>Purpose of Loan</summary>
@@ -709,6 +729,8 @@ pub_rec_bankruptcies.auto(bucket='only buckets')
 purpose = Explore('purpose')
 purpose.auto()
 ```
+
+![purpose](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/purpose.PNG)
 
 </details>
 
@@ -721,6 +743,8 @@ tot_coll_amt = Explore('tot_coll_amt', bucket=b)
 tot_coll_amt.auto(bucket='only buckets')
 ```
 
+![tot_coll_amt](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/tot_coll_amnt.PNG)
+
 </details>
 
 <details><summary>Verification Status</summary>
@@ -731,6 +755,8 @@ not verified, or if the income source was verified'''
 verification_status = Explore('verification_status')
 verification_status.auto()
 ```
+
+![verification_status](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/verification.PNG)
 
 </details>
 
