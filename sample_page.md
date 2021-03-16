@@ -107,9 +107,7 @@ loan = loan.loc[loan['loan_status'].isin(['Fully Paid', 'Charged Off'])]
 The class Explore is used to automatically explore the data, do statistics and visualizations.
 
 <details><summary>Click to expand the Explore class</summary>
-    
-<details><summary>Class initialization</summary>
-    
+        
 ```python
 class Explore:    
     """ Explores relations with of a feature with a binary target
@@ -185,20 +183,8 @@ class Explore:
         self.target_values = []
         self.target_values.append(self.subset[binary_target].unique()[0])
         self.target_values.append(self.subset[binary_target].unique()[1])
-```
 
-</details>
-
-<details><summary>Data transformation methods</summary>    
-
-<ul>
-<li><details><summary>Methods related to the bucket dictionary</summary>
-The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
-
-<ul>    
-<li><details><summary>bucket_key_words method</summary>
-    
-```python
+  
     def bucket_key_words(self):
         '''Allows bucket dictionary to have key words inputted for convenience  
         '''
@@ -262,14 +248,8 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
                          
             # Replace with new bucket
             self.bucket = new_bucket
-```
 
-</details>
-</li>
 
-<li><details><summary>quantile_bucketizer method method</summary>
-    
-```python    
     def quantile_bucketizer(self, numq=4, frmt='.2f'):
         ''' Automatically creates a bucket dictionary using quantiles for the data
         Parameters
@@ -311,15 +291,8 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 
         print(f'Bucket automatically computed for {numq} quantiles:\n{bucket}')
         return bucket
-``` 
-
-</details>  
-</li>
 
 
-<li><details><summary>bracket_type method</summary>
-    
-```python    
     def bracket_type(self, value):
         ''' Uses simple regular expressions to determine bracket type (open, left open, right open, closed)
         from the key in the bucket dictionary. 
@@ -334,15 +307,8 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         elif re.match('(\(.*\))', value) != None: return 'o'
         
         else: return False
-```
 
-</details>
-</li>
 
-    
-<li><details><summary>bucketize_data method</summary>
-
-```python
     def bucketize_data(self, new=None):
         '''Using the bucket dictionary, sort the data into their buckets
         Parameters| new: User defined bucket dictionary or None (default) 
@@ -367,14 +333,8 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             
             # With everything set up, perform the bucketization
             self.bucketize()
-```
 
-</details>
-</li>
 
-<li><details><summary>bucketize method</summary>
-
-```python
     def bucketize(self):
         ''' Bucketizes the data. self.bucket_dict format should have a format like this when called:
         {'[num1,num2]':[num1,num2], 
@@ -416,21 +376,8 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 
                 # Using the indices, replace the data with the bucket key in a new 'bucketized'+self.feat column
                 self.subset.loc[indices, 'bucketized_'+self.feat] = key
-```
-</details>
-</li>
-  
-</details>
-</ul>
-</li>
 
 
-<li><details><summary>Other Transformations method</summary>
-
-<ul>
-<li><details><summary>log_tansform method</summary>
-
-```python
     def log_transform(self):
         ''' Performs a log transformation of the data, only if not done already
         '''
@@ -439,15 +386,8 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         
         else: 
             self.subset['log_'+self.feat] = self.subset[self.feat].apply(lambda x: np.log(x+1))
-```
-
-</details>
-</li>
 
 
-<li><details><summary>delete_values method</summary>
-
-```python
     def delete_values(self, values):
         '''Deletes values from a given list. List values can be strings, integers or length 2 lists (ranges to delete)
         '''
@@ -457,27 +397,8 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             
             elif isinstance(val, list):
                 self.subset = self.subset[~self.subset[self.feat].between(val[0], val[1], inclusive=True)]
- ```
-
-</details>
-</li>
-
-</details>
-</ul>
-</li>
 
 
-</details>
-</ul>
-</li>
-  
-<li><details><summary>Main Methods method</summary>
-Main methods for statistics and visualization. 
-
-<ul>
-<li><details><summary>do_stats method</summary>
-
-```python
     def do_stats(self, prefix=''):
         ''' Runs statistics on the data.
         Parameters| prefix: string, for using transformed data
@@ -512,14 +433,8 @@ Main methods for statistics and visualization.
             self.stats = {'ChiSq':s[0], 'p_value':s[1]}
 
             print(self.stats)     
-```   
 
-</details>
-</li>
 
-<li><details><summary>plot_counts method</summary>
-
-```python
     def plot_counts(self, prefix=''):
         ''' For plotting a graph of the data counts, to see the distribution
         Parameters| prefix: string, for using transformed data
@@ -544,14 +459,8 @@ Main methods for statistics and visualization.
             ax.set_xlabel(feat)
         
         plt.tight_layout()
-```
 
-</details>
-</li>
 
-<li><details><summary>plot numerical data method</summary>
-
-```python
     def plot_num(self, prefix=''):
         ''' For plotting a comparison between the binary target_values for numerical data
         Parameters| prefix: string, for using transformed data
@@ -564,14 +473,8 @@ Main methods for statistics and visualization.
         ax.set_title(f'Boxplots comparing {self.target_values[0]} vs {self.target_values[1]} for '+feat)
         
         plt.tight_layout()
-```
 
-</details>
-</li>
 
-<li><details><summary>plot categorical data method</summary>
-
-```python
     def plot_cat(self, prefix='', target_value_compared=1):
         ''' For comparing categorical data, using a barplot to compare rates of target_value_compared
         for each category.
@@ -603,18 +506,8 @@ Main methods for statistics and visualization.
         ax.set_xlabel(feat)
         
         plt.tight_layout()
-```        
 
-</details>
-</li>
 
-<li><details><summary>Other methods</summary>
-Appendage methods for working with the data or convenience
-
-<ul>
-<li><details><summary>add_prefix method</summary>
-
-```python
     def add_prefix(self, prefix):
         '''Takes a given prefix (currently only looking at first letter) 
         and returns appriopriate feature name (changing nothing if empty string '' passed)
@@ -634,15 +527,8 @@ Appendage methods for working with the data or convenience
                 p = 'bucketized_'
 
         return p + self.feat
-```
 
 
-</details>
-</li>
-
-<li><details><summary>natural_key methods</summary>
-
-```python
     def natural_key(self, string_):
         ''' To "naturally" sort strings with numbers (ex: so [2,9] comes before [10,99])
         Only used in plotting count & categorical graphs with string number categories
@@ -656,14 +542,8 @@ Appendage methods for working with the data or convenience
         
         else:
             return [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', string_)]
-```
 
-</details>
-</li>
 
-<li><details><summary>auto convenience method</summary>
-
-```python
     def auto(self, log=False, bucket=None):
         ''' Convenience method for automatiically doing stats and the desired plots
         '''
@@ -698,20 +578,6 @@ Appendage methods for working with the data or convenience
             self.plot_counts(log_px)
             self.plot_cat(bucket_px)
 ```
-
-
-</details>
-</li>
-
-</details>
-</ul>
-</li>
-
-</details>
-</ul>
-</li>
-
-</details>
 
 ### 3. Support the selection of appropriate statistical tools and techniques
 
