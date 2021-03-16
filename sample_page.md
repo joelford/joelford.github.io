@@ -195,8 +195,7 @@ class Explore:
 <li><details><summary>Methods related to the bucket dictionary</summary>
 The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
 
-<ul>
-    
+<ul>    
 <li><details><summary>bucket_key_words method</summary>
     
 ```python
@@ -264,9 +263,9 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             # Replace with new bucket
             self.bucket = new_bucket
 ```
-</li>
 
 </details>
+</li>
 
 <li><details><summary>quantile_bucketizer method method</summary>
     
@@ -312,9 +311,11 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 
         print(f'Bucket automatically computed for {numq} quantiles:\n{bucket}')
         return bucket
-```    
-</li>
+``` 
+
 </details>  
+</li>
+
 
 <li><details><summary>bracket_type method</summary>
     
@@ -365,8 +366,9 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             # With everything set up, perform the bucketization
             self.bucketize()
 ```
-</li>
+
 </details>
+</li>
 
 <li><details><summary>bucketize method</summary>
 
@@ -413,12 +415,11 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
                 # Using the indices, replace the data with the bucket key in a new 'bucketized'+self.feat column
                 self.subset.loc[indices, 'bucketized_'+self.feat] = key
 ```
+</details>
 </li>
-</details>  
-
+  
+</details>
 </li>
-</details>                
-
 </ul>
 
 <li><details><summary>Other Transformations method</summary>
@@ -435,10 +436,11 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         
         else: 
             self.subset['log_'+self.feat] = self.subset[self.feat].apply(lambda x: np.log(x+1))
-```    
-</li>
+```
 
 </details>
+</li>
+
 
 <li><details><summary>delete_values method</summary>
 
@@ -453,16 +455,17 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             elif isinstance(val, list):
                 self.subset = self.subset[~self.subset[self.feat].between(val[0], val[1], inclusive=True)]
  ```
-</li>
-</details>
- 
-</details>
 
+</details>
+</li>
+
+</details>
+</li>
 </ul>
 
 </details>
-
 </li>
+</ul>
  
 <li><details><summary>Main Methods method</summary>
 Main methods for statistics and visualization. 
@@ -506,9 +509,9 @@ Main methods for statistics and visualization.
 
             print(self.stats)     
 ```   
-</li>
 
 </details>
+</li>
 
 <li><details><summary>plot_counts method</summary>
 
@@ -538,9 +541,9 @@ Main methods for statistics and visualization.
         
         plt.tight_layout()
 ```
-</li>
 
 </details>
+</li>
 
 <li><details><summary>plot numerical data method</summary>
 
@@ -558,9 +561,9 @@ Main methods for statistics and visualization.
         
         plt.tight_layout()
 ```
-</li>
 
 </details>
+</li>
 
 <li><details><summary>plot categorical data method</summary>
 
@@ -597,10 +600,10 @@ Main methods for statistics and visualization.
         
         plt.tight_layout()
 ```        
-</li>
 
 </details>
- 
+</li>
+
 <li><details><summary>Other methods</summary>
 Appendage methods for working with the data or convenience
 
@@ -628,9 +631,10 @@ Appendage methods for working with the data or convenience
 
         return p + self.feat
 ```
-</li>
+
 
 </details>
+</li>
 
 <li><details><summary>natural_key methods</summary>
 
@@ -649,9 +653,9 @@ Appendage methods for working with the data or convenience
         else:
             return [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', string_)]
 ```
-</li>
 
 </details>
+</li>
 
 <li><details><summary>auto convenience method</summary>
 
@@ -690,15 +694,16 @@ Appendage methods for working with the data or convenience
             self.plot_counts(log_px)
             self.plot_cat(bucket_px)
 ```
-</li>
 
 </details>
-
 </li>
+</ul>
 
 </details>
-
 </li>
+</ul>
+
+
 
 </details>
 
@@ -731,8 +736,6 @@ Text!
 
 </details>
 </li>
-
-
 </ul>
 
 </details>
