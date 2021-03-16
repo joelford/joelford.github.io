@@ -190,10 +190,10 @@ class Explore:
 ```            
 </details>
 
-<details><summary>Methods related to the bucket dictionary</summary>
+ <details><summary>Methods related to the bucket dictionary</summary>
 The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
 <br/><br/>
-<details><summary>bucket_key_words method</summary>
+  <details><summary>bucket_key_words method</summary>
     
 ```python
     def bucket_key_words(self):
