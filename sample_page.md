@@ -31,7 +31,7 @@ missing = loan.isnull().mean().sort_values(ascending=False)
 print(missing)
 missing.plot.hist(bins=20)
 ```
-
+<img src="images/missing.png?raw=true"/>
 
 ### 2. Assess assumptions on which statistical inference will be based
 
