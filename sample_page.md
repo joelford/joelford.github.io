@@ -190,10 +190,13 @@ class Explore:
 ```            
 </details>
 
- <details><summary>Methods related to the bucket dictionary</summary>
+<details><summary>Data transformation methods</summary>
+<br/><br/>
+    
+<details><summary>Methods related to the bucket dictionary</summary>
 The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
 <br/><br/>
-  <details><summary>bucket_key_words method</summary>
+<details><summary>bucket_key_words method</summary>
     
 ```python
     def bucket_key_words(self):
@@ -330,7 +333,7 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         else: return False
 ```
  
- </details>
+</details>
     
 <details><summary>bucketize_data method</summary>
 
@@ -412,7 +415,13 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 </details>  
 
 </details>                
-            
+
+<details><summary>Other Transformations method</summary>
+<br/><br/>
+    
+<details><summary>log_tansform method</summary>
+
+```python
     def log_transform(self):
         ''' Performs a log transformation of the data, only if not done already
         '''
@@ -421,29 +430,13 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         
         else: 
             self.subset['log_'+self.feat] = self.subset[self.feat].apply(lambda x: np.log(x+1))
-      
-    
-    def add_prefix(self, prefix):
-        '''Takes a given prefix (currently only looking at first letter) 
-        and returns appriopriate feature name (changing nothing if empty string '' passed)
-        Also calls for the appropriate transformation (only actually done if necessary, allows for transformations
-        to be performed without explicitly calling for it). 
-        Returns the prefix + feature name. '''
+```    
 
-        p = ''
+</details>
 
-        if len(prefix) > 0:
-            if prefix[0] == 'l':
-                self.log_transform()
-                p = 'log_'
+<details><summary>delete_values method</summary>
 
-            elif prefix[0] == 'b':
-                self.bucketize_data()
-                p = 'bucketized_'
-
-        return p + self.feat
-    
-    
+```python
     def delete_values(self, values):
         '''Deletes values from a given list. List values can be strings, integers or length 2 lists (ranges to delete)
         '''
@@ -453,8 +446,21 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             
             elif isinstance(val, list):
                 self.subset = self.subset[~self.subset[self.feat].between(val[0], val[1], inclusive=True)]
-                    
+ ```
+ 
+</details>
+ 
+</details>
+
+</details>
+ 
+<details><summary>Main Methods method</summary>
+Main methods for statistics and visualization.
     
+    
+<details><summary>do_stats method</summary>
+
+```python
     def do_stats(self, prefix=''):
         ''' Runs statistics on the data.
         Parameters| prefix: string, for using transformed data
@@ -489,23 +495,13 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             self.stats = {'ChiSq':s[0], 'p_value':s[1]}
 
             print(self.stats)     
-   
+```   
 
-    def natural_key(self, string_):
-        ''' To "naturally" sort strings with numbers (ex: so [2,9] comes before [10,99])
-        Only used in plotting count & categorical graphs with string number categories
-        I strip the first/last (string_[1:-1]) as this will look at things of the form '[num1,num2]'
-        See https://blog.codinghorror.com/sorting-for-humans-natural-sort-order/'''
-        string_ = str(string_)
-        
-        # If brackets are present, strip those so the first number is what's taken into account
-        if isinstance(string_, str) and ('[' in string_ or '(' in string_):
-            return [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', string_[1:-1])]
-        
-        else:
-            return [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', string_)]
-    
-    
+</details>
+
+<details><summary>plot_counts method</summary>
+
+```python
     def plot_counts(self, prefix=''):
         ''' For plotting a graph of the data counts, to see the distribution
         Parameters| prefix: string, for using transformed data
@@ -530,8 +526,13 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             ax.set_xlabel(feat)
         
         plt.tight_layout()
-    
-    
+```
+
+</details>
+
+<details><summary>plot_num method</summary>
+
+```python
     def plot_num(self, prefix=''):
         ''' For plotting a comparison between the binary target_values for numerical data
         Parameters| prefix: string, for using transformed data
@@ -544,8 +545,12 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         ax.set_title(f'Boxplots comparing {self.target_values[0]} vs {self.target_values[1]} for '+feat)
         
         plt.tight_layout()
-        
-        
+```
+</details>
+
+<details><summary>plot categorical data method</summary>
+
+```python
     def plot_cat(self, prefix='', target_value_compared=1):
         ''' For comparing categorical data, using a barplot to compare rates of target_value_compared
         for each category.
@@ -577,8 +582,64 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         ax.set_xlabel(feat)
         
         plt.tight_layout()
+```        
+
+</details>
+
+</details>
+
+<details><summary>Other methods</summary>
+Appendage methods for working with the data or convenience
+
+<details><summary>add_prefix method</summary>
+
+```python
+    def add_prefix(self, prefix):
+        '''Takes a given prefix (currently only looking at first letter) 
+        and returns appriopriate feature name (changing nothing if empty string '' passed)
+        Also calls for the appropriate transformation (only actually done if necessary, allows for transformations
+        to be performed without explicitly calling for it). 
+        Returns the prefix + feature name. '''
+
+        p = ''
+
+        if len(prefix) > 0:
+            if prefix[0] == 'l':
+                self.log_transform()
+                p = 'log_'
+
+            elif prefix[0] == 'b':
+                self.bucketize_data()
+                p = 'bucketized_'
+
+        return p + self.feat
+```
+
+</details>
+
+<details><summary>natural_key methods</summary>
+
+```python
+    def natural_key(self, string_):
+        ''' To "naturally" sort strings with numbers (ex: so [2,9] comes before [10,99])
+        Only used in plotting count & categorical graphs with string number categories
+        I strip the first/last (string_[1:-1]) as this will look at things of the form '[num1,num2]'
+        See https://blog.codinghorror.com/sorting-for-humans-natural-sort-order/'''
+        string_ = str(string_)
         
+        # If brackets are present, strip those so the first number is what's taken into account
+        if isinstance(string_, str) and ('[' in string_ or '(' in string_):
+            return [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', string_[1:-1])]
         
+        else:
+            return [int(s) if s.isdigit() else s for s in re.split(r'(\d+)', string_)]
+```
+
+</details>
+
+<details><summary>auto convenience method</summary>
+
+```python
     def auto(self, log=False, bucket=None):
         ''' Convenience method for automatiically doing stats and the desired plots
         '''
@@ -613,6 +674,11 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
             self.plot_counts(log_px)
             self.plot_cat(bucket_px)
 ```
+
+</details>
+
+</details>
+
 </details>
 
 ### 3. Support the selection of appropriate statistical tools and techniques
