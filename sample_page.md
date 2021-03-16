@@ -108,7 +108,8 @@ The class Explore is used to automatically explore the data, do statistics and v
 
 <details>
     <summary>Click to expand the Explore class</summary>
-class Explore:
+```python
+    class Explore:
     ''' Explores relations with of a feature with a binary target
     Parameters
     -----------
@@ -576,6 +577,7 @@ class Explore:
             self.plot_counts(log_px)
             self.plot_cat(bucket_px)
 </details>
+```
 
 ### 3. Support the selection of appropriate statistical tools and techniques
 
