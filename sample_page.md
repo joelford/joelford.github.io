@@ -335,8 +335,10 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
         
         else: return False
 ```
-</li>
+
 </details>
+</li>
+
     
 <li><details><summary>bucketize_data method</summary>
 
@@ -695,6 +697,10 @@ Appendage methods for working with the data or convenience
             self.plot_cat(bucket_px)
 ```
 
+
+</details>
+</li>
+
 </details>
 </li>
 </ul>
@@ -702,8 +708,6 @@ Appendage methods for working with the data or convenience
 </details>
 </li>
 </ul>
-
-
 
 </details>
 
