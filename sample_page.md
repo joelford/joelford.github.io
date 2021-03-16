@@ -421,8 +421,9 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 </li>
   
 </details>
-</li>
 </ul>
+</li>
+
 
 <li><details><summary>Other Transformations method</summary>
 
@@ -462,13 +463,14 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 </li>
 
 </details>
-</li>
 </ul>
+</li>
+
 
 </details>
+</ul>
 </li>
-</ul> 
- 
+  
 <li><details><summary>Main Methods method</summary>
 Main methods for statistics and visualization. 
 
@@ -702,12 +704,12 @@ Appendage methods for working with the data or convenience
 </li>
 
 </details>
-</li>
 </ul>
+</li>
 
 </details>
-</li>
 </ul>
+</li>
 
 </details>
 
