@@ -711,19 +711,23 @@ Appendage methods for working with the data or convenience
 Text!
     
 <ul>
-<li><details><summary>summary1.1.1</summary> 
-```python
-def derp(self):
-print('derp')
-```
+    <li><details><summary>summary1.1.1</summary>
+    
+    ```python
+    def derp(self):
+    print('derp')
+    ```
+    
 </li>
 </details>
     
 <li><details><summary>summary1.1.2</summary>
-```python
-def herp(self):
-print('herp')
-```
+    
+    ```python
+    def herp(self):
+    print('herp')
+    ```
+    
 </li>
 </details>
 
