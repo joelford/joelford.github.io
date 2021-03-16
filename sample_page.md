@@ -603,7 +603,6 @@ addr_state.auto()
 annual_inc = Explore('annual_inc')
 annual_inc.do_stats()
 annual_inc.plot_cat('bucket')
-<img src="images/explor_img/annual_inc.png?raw=true"/>
 ```
 
 ![annual_inc](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/annual_inc.PNG)
@@ -616,8 +615,6 @@ annual_inc.plot_cat('bucket')
 ''' avg_cur_bal "Average current balance of all accounts '''
 avg_cur_bal = Explore('avg_cur_bal')
 avg_cur_bal.auto(log=True)
-<img src="images/explor_img/avg_cur_bal1.png?raw=true"/>
-<img src="images/explor_img/avg_cur_bal2.png?raw=true"/>
 ```
 
 ![avg_cur_bal1](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/avg_cur_bal1.PNG)
@@ -631,7 +628,6 @@ avg_cur_bal.auto(log=True)
 bc_open_to_buy = Explore('bc_open_to_buy')
 bc_open_to_buy.bucketize_data({'0':0, '(0,5000)':[0.001, 5000], '5000=+':'5000=+'})
 bc_open_to_buy.auto(bucket = 'only buckets')
-<img src="images/explor_img/bc_open_to_buy.png?raw=true"/>
 ```
 
 ![bc_open_to_buy](https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/bc_open_to_buy.PNG)
