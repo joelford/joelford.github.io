@@ -579,6 +579,8 @@ class Explore:
             self.plot_cat(bucket_px)
 ```
 
+</details>
+
 ### 3. Example Data Explorations
 For brevity, only a small portion of the total features data exploration is shown here.
 <details><summary>Address State</summary>
