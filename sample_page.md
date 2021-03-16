@@ -467,7 +467,7 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 
 </details>
 </li>
-</ul>
+</ul> 
  
 <li><details><summary>Main Methods method</summary>
 Main methods for statistics and visualization. 
