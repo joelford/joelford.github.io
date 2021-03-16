@@ -583,6 +583,7 @@ class Explore:
 
 ### 3. Example Data Explorations
 For brevity, only a small portion of the total features data exploration is shown here.
+
 <details><summary>Address State</summary>
     
 ```python
@@ -621,6 +622,8 @@ bc_open_to_buy = Explore('bc_open_to_buy')
 bc_open_to_buy.bucketize_data({'0':0, '(0,5000)':[0.001, 5000], '5000=+':'5000=+'})
 bc_open_to_buy.auto(bucket = 'only buckets')
 ```
+
+</details>
 
 <details><summary>DTI Ratio</summary>
 
