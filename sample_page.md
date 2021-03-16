@@ -108,7 +108,8 @@ The class Explore is used to automatically explore the data, do statistics and v
 
 <details>
     <summary>Click to expand the Explore class</summary>
-
+<br/><br/>
+    
 <details>
     <summary>Class initialization</summary>
     
@@ -456,7 +457,7 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
  
 <details><summary>Main Methods method</summary>
 Main methods for statistics and visualization.
-    
+<br/><br/>    
     
 <details><summary>do_stats method</summary>
 
