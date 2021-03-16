@@ -579,39 +579,141 @@ class Explore:
             self.plot_cat(bucket_px)
 ```
 
-### 3. Support the selection of appropriate statistical tools and techniques
-
-<details><summary>summary1</summary>
-
-<ul>
-<li><details><summary>summary1.1</summary>
-Text!
+### 3. Example Data Explorations
+For brevity, only a small portion of the total features data exploration is shown here.
+<details><summary>Address State</summary>
     
-<ul>
-    <li><details><summary>summary1.1.1</summary>
-    
-    ```python
-    def derp(self):
-    print('derp')
-    ```
-    
-</details>
-</li>
-
-    
-<li><details><summary>summary1.1.2</summary>
-    
-    ```python
-    def herp(self):
-    print('herp')
-    ```
+```python
+''' addr_state "The state provided by the borrower in the loan application. '''
+addr_state = Explore('addr_state')
+addr_state.auto()
+```
 
 </details>
-</li>
-</ul>
+
+<details><summary>Annual Income</summary>
+    
+```python
+''' annual_inc (going to need to look at log results) '''
+annual_inc = Explore('annual_inc')
+annual_inc.do_stats()
+annual_inc.plot_cat('bucket')    
+```
 
 </details>
-</ul>
+
+<details><summary>Average Current Balance</summary>
+ 
+```python
+''' avg_cur_bal "Average current balance of all accounts '''
+avg_cur_bal = Explore('avg_cur_bal')
+avg_cur_bal.auto(log=True)
+```
+
+</details>
+
+<details><summary>Bankcards open to buy</summary>
+    
+```python
+bc_open_to_buy = Explore('bc_open_to_buy')
+bc_open_to_buy.bucketize_data({'0':0, '(0,5000)':[0.001, 5000], '5000=+':'5000=+'})
+bc_open_to_buy.auto(bucket = 'only buckets')
+```
+
+<details><summary>DTI Ratio</summary>
+
+```python
+'''dti A ratio calculated using the borrower’s total monthly debt payments on the total debt obligations, 
+excluding mortgage and the requested LC loan, divided by the borrower’s self-reported monthly income. '''
+dti = Explore('dti')
+dti.delete_values([[-1,-0.000001]])
+dti.do_stats()
+dti.plot_cat('bucket')
+```
+
+</details>
+
+<details><summary>FICO range high (credit score)</summary>
+
+```python
+'''fico_range_high The upper boundary range the borrower’s FICO at loan origination belongs to.'''
+fico_range_high = Explore('fico_range_high')
+b = fico_range_high.quantile_bucketizer(4)
+fico_range_high.bucketize_data(new=b)
+fico_range_high.plot_cat(prefix='bucket')
+```
+
+</details>
+
+
+<details><summary>Home Ownership Status</summary>
+
+```python
+'''home_ownership The home ownership status provided by the borrower during registration. 
+Our values are: RENT, OWN, MORTGAGE, OTHER.'''
+home_ownership = Explore('home_ownership')
+home_ownership.delete_values(['NONE']) #NONE value exists for some reason, remove
+home_ownership.do_stats()
+home_ownership.plot_counts()
+home_ownership.plot_cat()
+```
+
+</details>
+
+<details><summary>Number of Mortgage Accounts</summary>
+
+```python
+'''mort_acc Number of mortgage accounts.'''
+b = {'0':0, '1':1, '2':2, 
+                    '3':3, '4':4, '5+':'5+'}
+mort_acc = Explore('mort_acc', bucket=b)
+mort_acc.auto(bucket='only buckets')
+```
+
+</details>
+
+<details><summary>Percentage of all bankcard accounts > 75% of limit</summary>
+
+```python
+percent_bc_gt_75 = Explore('percent_bc_gt_75')
+percent_bc_gt_75.auto()
+```
+
+</details>
+
+<details><summary>Total collection amounts ever owed</summary>
+
+<details><summary>Purpose of Loan</summary>
+
+```python
+'''purpose A category provided by the borrower for the loan request. '''
+purpose = Explore('purpose')
+purpose.auto()
+```
+
+</details>
+
+<details><summary>Total collection amounts ever owed</summary>
+
+```python
+'''tot_coll_amt Total collection amounts ever owed'''
+b={'0':0, '1+=':'1+='}
+tot_coll_amt = Explore('tot_coll_amt', bucket=b)
+tot_coll_amt.auto(bucket='only buckets')
+```
+
+</details>
+
+<details><summary>Verification Status</summary>
+
+```python
+'''verification_status Indicates if the co-borrowers' joint income was verified by LC, 
+not verified, or if the income source was verified'''
+verification_status = Explore('verification_status')
+verification_status.auto()
+```
+
+</details>
 
 ### 4. Provide a basis for further data collection through surveys or experiments
 
