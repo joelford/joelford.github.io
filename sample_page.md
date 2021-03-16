@@ -106,8 +106,11 @@ loan = loan.loc[loan['loan_status'].isin(['Fully Paid', 'Charged Off'])]
 ### 2. Exploration Class
 The class Explore is used to automatically explore the data, do statistics and visualizations.
 
-<details><summary>Click to expand the Explore class</summary>    
-<details><summary>Class initialization</summary>
+<details><summary>Click to expand the Explore class</summary>
+    
+<ul>
+
+<li><details><summary>Class initialization</summary>
     
 ```python
 class Explore:    
@@ -184,10 +187,13 @@ class Explore:
         self.target_values = []
         self.target_values.append(self.subset[binary_target].unique()[0])
         self.target_values.append(self.subset[binary_target].unique()[1])
-```            
+```
+
 </details>
 
-<details><summary>Data transformation methods</summary>    
+</li>
+
+<li><details><summary>Data transformation methods</summary>    
     
 <details><summary>Methods related to the bucket dictionary</summary>
 The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
@@ -452,8 +458,10 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 </details>
 
 </details>
+
+</li>
  
-<details><summary>Main Methods method</summary>
+<li><details><summary>Main Methods method</summary>
 Main methods for statistics and visualization. 
 
 <details><summary>do_stats method</summary>
@@ -675,6 +683,8 @@ Appendage methods for working with the data or convenience
 </details>
 
 </details>
+
+</li>
 
 </details>
 
