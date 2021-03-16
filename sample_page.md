@@ -582,7 +582,7 @@ class Explore:
 </details>
 
 ### 3. Example Data Explorations
-For brevity, only a small portion of the total features data exploration is shown here.
+For brevity, only a small portion of the total features data exploration is shown here. Prior to modelling, all features will have been inspecting using Explore() and a decision reached whether to keep or discard.
 
 <details><summary>Address State</summary>
     
@@ -650,7 +650,6 @@ fico_range_high.plot_cat(prefix='bucket')
 
 </details>
 
-
 <details><summary>Home Ownership Status</summary>
 
 ```python
@@ -686,7 +685,16 @@ percent_bc_gt_75.auto()
 
 </details>
 
-<details><summary>Total collection amounts ever owed</summary>
+<details><summary>Public records of bankruptices</summary>
+
+```python
+'''pub_rec_bankruptcies Number of public record bankruptcies'''
+b={'0':0, '1':1, '2=+':'2=+'}
+pub_rec_bankruptcies = Explore('pub_rec_bankruptcies', bucket=b)
+pub_rec_bankruptcies.auto(bucket='only buckets')
+```
+
+</details>
 
 <details><summary>Purpose of Loan</summary>
 
