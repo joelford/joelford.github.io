@@ -718,8 +718,9 @@ Text!
     print('derp')
     ```
     
-</li>
 </details>
+</li>
+
     
 <li><details><summary>summary1.1.2</summary>
     
@@ -727,9 +728,10 @@ Text!
     def herp(self):
     print('herp')
     ```
-    
-</li>
+
 </details>
+</li>
+
 
 </ul>
 
