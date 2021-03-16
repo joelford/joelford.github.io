@@ -4,7 +4,7 @@
 
 ### Data Exploration and Modelling
 
-[LendingClub Project](/sample_page)
+[LendingClub Project](https://github.com/joelford/joelford.github.io/blob/master/sample_page.md)
 <img src="images/explor_img/home.PNG?raw=true"/>
 
 ---
