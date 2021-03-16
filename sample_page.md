@@ -191,7 +191,7 @@ class Explore:
 ```            
 </details>
 
-&nbsp<details><summary>Data transformation methods</summary>
+&nbsp;<details><summary>Data transformation methods</summary>
 <br/><br/>
     
 <details><summary>Methods related to the bucket dictionary</summary>
