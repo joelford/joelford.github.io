@@ -108,7 +108,6 @@ The class Explore is used to automatically explore the data, do statistics and v
 
 <details>
     <summary>Click to expand the Explore class</summary>
-<br/><br/>
     
 <details>
     <summary>Class initialization</summary>
@@ -191,12 +190,11 @@ class Explore:
 ```            
 </details>
 
-&nbsp;<details><summary>Data transformation methods</summary>
-<br/><br/>
+<details><summary>Data transformation methods</summary>
+
     
 <details><summary>Methods related to the bucket dictionary</summary>
 The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
-<br/><br/>
 <details><summary>bucket_key_words method</summary>
     
 ```python
@@ -418,7 +416,6 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 </details>                
 
 <details><summary>Other Transformations method</summary>
-<br/><br/>
     
 <details><summary>log_tansform method</summary>
 
@@ -456,8 +453,7 @@ The bucket dictionary allows for data to categorized based on "buckets". For exa
 </details>
  
 <details><summary>Main Methods method</summary>
-Main methods for statistics and visualization.
-<br/><br/>    
+Main methods for statistics and visualization. 
     
 <details><summary>do_stats method</summary>
 
