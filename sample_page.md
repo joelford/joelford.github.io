@@ -22,8 +22,16 @@ Reading the data into a Pandas dataframe
 
 ```python
 loan = pd.read_csv('data/accepted_2007_to_2018q4/accepted_2007_to_2018Q4.csv', low_memory=False)
-loan.shape
 ```
+
+Analysing how much missing data we have
+
+```python
+missing = loan.isnull().mean().sort_values(ascending=False)
+print(missing)
+missing.plot.hist(bins=20)
+```
+
 
 ### 2. Assess assumptions on which statistical inference will be based
 
