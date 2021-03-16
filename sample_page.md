@@ -106,11 +106,9 @@ loan = loan.loc[loan['loan_status'].isin(['Fully Paid', 'Charged Off'])]
 ### 2. Exploration Class
 The class Explore is used to automatically explore the data, do statistics and visualizations.
 
-<details>
-    <summary>Click to expand the Explore class</summary>
+<details><summary>Click to expand the Explore class</summary>
     
-<space><space><details>
-    <summary>Class initialization</summary>
+|  <details><summary>Class initialization</summary>
     
 ```python
 class Explore:    
@@ -527,7 +525,7 @@ Main methods for statistics and visualization.
 
 </details>
 
-<details><summary>plot_num method</summary>
+<details><summary>plot numerical data method</summary>
 
 ```python
     def plot_num(self, prefix=''):
