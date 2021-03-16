@@ -590,8 +590,9 @@ For brevity, only a small portion of the total features data exploration is show
 ''' addr_state "The state provided by the borrower in the loan application. '''
 addr_state = Explore('addr_state')
 addr_state.auto()
-!(https://raw.githubusercontent.com/joelford/joelford.github.io/master/images/explor_img/address_state.png)
 ```
+
+<img src="images/explor_img/annual_inc.png?raw=true"/>
 
 </details>
 
