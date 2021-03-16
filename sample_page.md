@@ -108,9 +108,13 @@ The class Explore is used to automatically explore the data, do statistics and v
 
 <details>
     <summary>Click to expand the Explore class</summary>
+```python    
+class Explore:
+```
+    <details>
+    <summary>Class initialization<\summary>
 ```python
-    class Explore:
-    ''' Explores relations with of a feature with a binary target
+    """ Explores relations with of a feature with a binary target
     Parameters
     -----------
     feat: string
@@ -132,7 +136,7 @@ The class Explore is used to automatically explore the data, do statistics and v
         If int, bucket dictionary is automatically made from user defined integer. 
         User defined dictionarys have form: {'bucket_range_name':[min,max],...}, eg. {'0':[0,0], '0+':[1,999]} (numerical)
             OR {'bucket_cat_name':[cat1,cat2,...],...} (categorical)
-    '''
+    """
     
     def __init__(self, 
                  feat, 
@@ -184,8 +188,9 @@ The class Explore is used to automatically explore the data, do statistics and v
         self.target_values = []
         self.target_values.append(self.subset[binary_target].unique()[0])
         self.target_values.append(self.subset[binary_target].unique()[1])
-            
-            
+```            
+<details>
+
     def bucket_key_words(self):
         '''Allows bucket dictionary to have key words inputted for convenience  
         '''
@@ -576,8 +581,8 @@ The class Explore is used to automatically explore the data, do statistics and v
         elif self.dtype == 'object':
             self.plot_counts(log_px)
             self.plot_cat(bucket_px)
-</details>
 ```
+</details>
 
 ### 3. Support the selection of appropriate statistical tools and techniques
 
