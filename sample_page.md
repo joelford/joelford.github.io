@@ -108,12 +108,12 @@ The class Explore is used to automatically explore the data, do statistics and v
 
 <details>
     <summary>Click to expand the Explore class</summary>
-```python    
-class Explore:
-```
-    <details>
+
+<details>
     <summary>Class initialization<\summary>
+    
 ```python
+class Explore:    
     """ Explores relations with of a feature with a binary target
     Parameters
     -----------
@@ -122,8 +122,7 @@ class Explore:
     binary_target: string,
         The binary target. Default is "loan_status"
     as_cat:
-        To treat the feature as categorical data. Default False.
-        
+        To treat the feature as categorical data. Default False.  
     Attributes
     ----------
     dtype: string
@@ -189,8 +188,9 @@ class Explore:
         self.target_values.append(self.subset[binary_target].unique()[0])
         self.target_values.append(self.subset[binary_target].unique()[1])
 ```            
-<details>
-
+<\details>
+<details><summary>bucket_key_words method<\summary>
+```python
     def bucket_key_words(self):
         '''Allows bucket dictionary to have key words inputted for convenience  
         '''
@@ -254,7 +254,8 @@ class Explore:
                          
             # Replace with new bucket
             self.bucket = new_bucket
-                        
+```
+<\details>
                             
     def quantile_bucketizer(self, numq=4, frmt='.2f'):
         ''' Automatically creates a bucket dictionary using quantiles for the data
