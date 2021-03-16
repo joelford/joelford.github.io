@@ -110,7 +110,7 @@ The class Explore is used to automatically explore the data, do statistics and v
     <summary>Click to expand the Explore class</summary>
 
 <details>
-    <summary>Class initialization<\summary>
+    <summary>Class initialization</summary>
     
 ```python
 class Explore:    
@@ -188,8 +188,13 @@ class Explore:
         self.target_values.append(self.subset[binary_target].unique()[0])
         self.target_values.append(self.subset[binary_target].unique()[1])
 ```            
-<\details>
-<details><summary>bucket_key_words method<\summary>
+</details>
+
+<details><summary>Methods related to the bucket dictionary</summary>
+The bucket dictionary allows for data to categorized based on "buckets". For example, we may want the data to be placed into buckets for all values 0 and everthing greater than 0.
+
+<details><summary>bucket_key_words method</summary>
+    
 ```python
     def bucket_key_words(self):
         '''Allows bucket dictionary to have key words inputted for convenience  
@@ -255,8 +260,12 @@ class Explore:
             # Replace with new bucket
             self.bucket = new_bucket
 ```
-<\details>
-                            
+
+</details>
+
+<details><summary>quantile_bucketizer method method</summary>
+    
+```python    
     def quantile_bucketizer(self, numq=4, frmt='.2f'):
         ''' Automatically creates a bucket dictionary using quantiles for the data
         Parameters
@@ -298,8 +307,13 @@ class Explore:
 
         print(f'Bucket automatically computed for {numq} quantiles:\n{bucket}')
         return bucket
+```    
+
+</details>  
+
+<details><summary>bracket_type method</summary>
     
-    
+```python    
     def bracket_type(self, value):
         ''' Uses simple regular expressions to determine bracket type (open, left open, right open, closed)
         from the key in the bucket dictionary. 
@@ -314,8 +328,13 @@ class Explore:
         elif re.match('(\(.*\))', value) != None: return 'o'
         
         else: return False
+```
+ 
+ </details>
     
-    
+<details><summary>bucketize_data method</summary>
+
+```python
     def bucketize_data(self, new=None):
         '''Using the bucket dictionary, sort the data into their buckets
         Parameters| new: User defined bucket dictionary or None (default) 
@@ -337,9 +356,16 @@ class Explore:
                 
             # In case there are bucket key words
             self.bucket_key_words()
-            self.bucketize()
             
-    
+            # With everything set up, perform the bucketization
+            self.bucketize()
+```
+
+</details>
+
+<details><summary>bucketize method</summary>
+
+```python
     def bucketize(self):
         ''' Bucketizes the data. self.bucket_dict format should have a format like this when called:
         {'[num1,num2]':[num1,num2], 
@@ -381,7 +407,11 @@ class Explore:
 
                 # Using the indices, replace the data with the bucket key in a new 'bucketized'+self.feat column
                 self.subset.loc[indices, 'bucketized_'+self.feat] = key
-                
+```
+
+</details>  
+
+</details>                
             
     def log_transform(self):
         ''' Performs a log transformation of the data, only if not done already
