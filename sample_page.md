@@ -33,6 +33,71 @@ missing.plot.hist(bins=20)
 ```
 <img src="images/missing.png?raw=true"/>
 
+Many columns are nearly or completely empty. Only keep columns with >30% data
+```python
+drop = missing[missing > 0.30].index
+loan.drop(drop, axis=1, inplace=True)
+```
+
+Get the columns we currently have kept, save to a file for reference
+```python
+import os.path
+def columns(df, filename, to_print=False):
+    columns_sorted = df.columns.sort_values()
+    
+    if not os.path.isfile(filename): # Only make this file once
+        with open(filename, 'a') as f:
+            for col in columns_sorted:
+                if to_print:
+                    print(col)
+                    
+                f.write(col+'\n')
+                
+        f.close()
+    
+    else:
+        print(filename+' already exists.')
+
+column(loan, 'loan_columns_missing_removed.txt')
+```
+
+Remove irrelevant/undesirable columns. Information on variable defintions: https://resources.lendingclub.com/LCDataDictionary.xlsx.
+Reasons for removal:
+1. Irrelevant (ex: id)
+2. Information was gained after loan origination (ex: last payment)
+```python
+remove = ['collection_recovery_fee',  # 2
+            'collections_12_mths_ex_med',  # 2
+            'debt_settlement_flag',  # 2
+            'disbursement_method',  # 1
+            'earliest_cr_line',  # 1
+            'emp_title', # Far too many categories, drop
+            'funded_amnt',  # 2
+            'funded_amnt_inv',  # 2
+            'hardship_flag',  # 2
+            'id',  # 1
+            'initial_list_status',  # 1
+            'last_credit_pull_d',  # 1
+            'last_fico_range_high',  # 2
+            'last_fico_range_low',  # 2
+            'last_pymnt_d',  # 2
+            'last_pymnt_amnt',  # 2
+            'policy_code',  # 1
+            'out_prncp_inv',  # 2
+            'out_prncp',  # 2
+            'recoveries', # 2
+            'title',  # 1
+            'total_pymnt',  # 2
+            'total_pymnt_inv',  # 2
+            'total_rec_int',  # 2
+            'total_rec_late_fee',  # 2
+            'total_rec_prncp',  # 2
+            'url',  # 1
+         ]
+         
+loan.drop(remove, axis=1, inplace=True)
+```
+
 ### 2. Assess assumptions on which statistical inference will be based
 
 ```javascript
