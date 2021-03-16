@@ -109,7 +109,7 @@ The class Explore is used to automatically explore the data, do statistics and v
 <details>
     <summary>Click to expand the Explore class</summary>
     
-<details>
+<space><space><details>
     <summary>Class initialization</summary>
     
 ```python
@@ -580,8 +580,6 @@ Main methods for statistics and visualization.
         
         plt.tight_layout()
 ```        
-
-</details>
 
 </details>
 
