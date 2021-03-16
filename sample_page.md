@@ -590,6 +590,7 @@ For brevity, only a small portion of the total features data exploration is show
 ''' addr_state "The state provided by the borrower in the loan application. '''
 addr_state = Explore('addr_state')
 addr_state.auto()
+<img src="images/explor_img/address_state.png?raw=true"/>
 ```
 
 </details>
@@ -600,7 +601,8 @@ addr_state.auto()
 ''' annual_inc (going to need to look at log results) '''
 annual_inc = Explore('annual_inc')
 annual_inc.do_stats()
-annual_inc.plot_cat('bucket')    
+annual_inc.plot_cat('bucket')
+<img src="images/explor_img/annual_inc.png?raw=true"/>
 ```
 
 </details>
@@ -611,6 +613,8 @@ annual_inc.plot_cat('bucket')
 ''' avg_cur_bal "Average current balance of all accounts '''
 avg_cur_bal = Explore('avg_cur_bal')
 avg_cur_bal.auto(log=True)
+<img src="images/explor_img/avg_cur_bal1.png?raw=true"/>
+<img src="images/explor_img/avg_cur_bal2.png?raw=true"/>
 ```
 
 </details>
@@ -621,6 +625,7 @@ avg_cur_bal.auto(log=True)
 bc_open_to_buy = Explore('bc_open_to_buy')
 bc_open_to_buy.bucketize_data({'0':0, '(0,5000)':[0.001, 5000], '5000=+':'5000=+'})
 bc_open_to_buy.auto(bucket = 'only buckets')
+<img src="images/explor_img/bc_open_to_buy.png?raw=true"/>
 ```
 
 </details>
