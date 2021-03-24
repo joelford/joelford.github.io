@@ -40,12 +40,14 @@ Research Assistant, 2018-2020
   </ul>
 </li>
 </ol>
+
 ### Cabinet Solutions
 Warehouse Staff, 2014-2015
 <ul>
 <li>Partnered on a two-person team, running the warehouse operations of the store.</li>
 <li>Operating many hours alone and unmanaged, I performed with excellent organizational skills and a deep motivation to work.</li>
 </ul>
+
 ### Calaway Park
 Warehouse Supervisor, 2011-2013
 <ul>
