@@ -1,7 +1,5 @@
 # Joel Elford
-### Calgary, Ab
-### joelelford@gmail.com
-### 403-619-4670
+### Calgary, Alberta, Canada &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; joelelford@gmail.com &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 403-619-4670
 ## Profile
 Recent master’s graduate in mathematics with a passion for discovering valuable insights from data through the use of novel techniques. A proven versatile learner with a strong aptitude for problem solving who is keen to apply the latest methods on difficult problems. Experience with modelling, machine learning, visualization and team collaboration. 
 ## General Skills 
