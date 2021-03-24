@@ -16,7 +16,7 @@ ee|ff|gg
 @@ text in purple (and bold)@@
 ```
 
-## Techincal Skills
+## Technical Skills
 <ul>
 <li>Programming Languages / Software: Python, SQL, Scala, MATLAB, R</li>
 <li>Other: Apache Spark, scikit-learn, TensorFlow, Microsoft Office, Statistics</li>
@@ -25,12 +25,14 @@ ee|ff|gg
 ## Education
 ### University of Calgary
 <ul>
-<li>Master's of Science, Mathematics, 2017-2020</li>
-<ul>
-<li><Mathematics & statistics with an additional focus in computer & data science</li>
+<li>Master's of Science, Mathematics, 2017-2020
+  <ul>
+  <li>Mathematics & statistics with an additional focus in computer & data science</li>
+  </ul>
+  </li>
+<li>Bachelor's of Science, Mathematics, 2010-2016
+  <ul>
+  <li>Mathematics, achieving a GPA of 3.9 (with a minor in biology)</li>
+  </ul>
 </ul>
-<li>Bachelor's of Science, Mathematics, 2010-2016</li>
-<ul>
-<li>Mathematics, achieving a GPA of 3.9 (with a minor in biology)</li>
-</ul>
-</ul>
+</li>
